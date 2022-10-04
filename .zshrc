@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/${USER}/.oh-my-zsh"
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,4 +112,4 @@ alias dcmp='docker-compose'
 export CC=clang-14 CXX=clang++-14
 
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/home/${USER}/.cargo/bin
+export PATH=$PATH:/${HOME}/.cargo/bin

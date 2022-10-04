@@ -16,6 +16,30 @@ end
 dap_install.setup {}
 
 dap_install.config("python", {})
+dap.configurations.cpp = {
+  {
+    name = "Launch file",
+    type = "cppdbg",
+    request = "launch",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopAtEntry = true,
+  },
+  {
+    name = 'Attach to gdbserver :1234',
+    type = 'cppdbg',
+    request = 'launch',
+    MIMode = 'gdb',
+    miDebuggerServerAddress = 'localhost:1234',
+    miDebuggerPath = '/usr/local/bin/gdb',
+    cwd = '${workspaceFolder}',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+  },
+}
 -- add other configs here
 
 dapui.setup {
